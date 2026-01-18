@@ -18,7 +18,7 @@ const teamMembers = [
     bio: "Graduate student at Duke Fuqua with strong interests in NLP, computer vision, and applied machine learning. Passionate about building practical AI systems that solve everyday problems.",
     linkedin: "https://www.linkedin.com/in/william-zhu1/",
     github: "https://github.com/wzhu8041",
-    email: "william.zhu@duke.edu",
+    email: "w.zhu@duke.edu",
   },
 ];
 
@@ -183,9 +183,9 @@ export default function AboutPage() {
               skills={[
                 "Natural Language Processing (NLP)",
                 "Computer Vision",
-                "Deep Learning (PyTorch, TensorFlow)",
+                "Deep Learning (PyTorch)",
                 "Model Optimization & Deployment",
-                "Transformers & BERT",
+                "Transformers & BART",
               ]}
               delay={0}
             />
@@ -194,9 +194,9 @@ export default function AboutPage() {
               skills={[
                 "Web Scraping & Data Collection",
                 "ETL Pipeline Design",
-                "Database Management (SQL, PostgreSQL)",
-                "Data Cleaning & Preprocessing",
                 "Time-Series Analysis",
+                "Data Cleaning & Preprocessing",
+                "BLS Data Integration",
               ]}
               delay={0.1}
             />
@@ -206,8 +206,8 @@ export default function AboutPage() {
                 "Full-Stack Web Development",
                 "React & TypeScript",
                 "API Design & Integration",
-                "Data Visualization (Plotly, Dash)",
-                "Mobile Development (React Native)",
+                "Data Visualization (Plotly)",
+                "Next.js & Tailwind CSS",
               ]}
               delay={0.2}
             />
@@ -231,12 +231,12 @@ export default function AboutPage() {
               Interested in collaborating on data science projects or learning more about our work?
               We'd love to hear from you.
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-blue-600 bg-white hover:bg-gray-50 rounded-lg transition-colors shadow-lg"
             >
               Get in Touch
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

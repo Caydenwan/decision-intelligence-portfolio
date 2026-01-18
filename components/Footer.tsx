@@ -14,32 +14,67 @@ export default function Footer() {
               Turning raw data into better choices for everyday life. Four connected projects
               demonstrating the power of data science and machine learning in practical applications.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/decision-intelligence"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:contact@decision-intelligence.com"
-                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-4">
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Yunhao (Cayden) Wan:</span>
+                <div className="flex space-x-3">
+                  <a
+                    href="https://github.com/Caydenwan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <Github className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/yunhao-wan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="mailto:yunhao.wan@duke.edu"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    aria-label="Email"
+                  >
+                    <Mail className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">William Zhu:</span>
+                <div className="flex space-x-3">
+                  <a
+                    href="https://github.com/wzhu8041"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <Github className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/william-zhu1/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="mailto:w.zhu@duke.edu"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    aria-label="Email"
+                  >
+                    <Mail className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -90,15 +125,15 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/projects/news-summarization"
+                  href="/projects/news-article-summarizer"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  News Summarization
+                  News Summarizer
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/projects/recycling-classifier"
+                  href="/projects/recycle-classifier"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   Recycling Classifier
@@ -106,18 +141,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects/portfolio-recommendation"
+                  href="/projects/riskpath-portfolio-forecasting"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  Portfolio Recommendation
+                  Portfolio Forecasting
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/projects/job-hunting-dashboard"
+                  href="/projects/job-market-data-exploration"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
-                  Job Hunting Dashboard
+                  Job Market Exploration
                 </Link>
               </li>
             </ul>

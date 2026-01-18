@@ -13,7 +13,7 @@ const teamContacts = [
   },
   {
     name: "William Zhu",
-    email: "william.zhu@duke.edu",
+    email: "w.zhu@duke.edu",
     linkedin: "https://www.linkedin.com/in/william-zhu1/",
     github: "https://github.com/wzhu8041",
   },
@@ -277,72 +277,28 @@ export default function ContactPage() {
                   We're Open To:
                 </h3>
                 <ul className="space-y-3">
-                  {[
-                    "Research collaborations",
-                    "Data science consulting",
-                    "Speaking engagements",
-                    "Project partnerships",
-                    "Academic collaborations",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center text-gray-700 dark:text-gray-300"
-                    >
-                      <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-3"></span>
-                      {item}
-                    </li>
-                  ))}
+                  <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                    Research collaborations
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                    Data science projects
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                    Professional networking
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                    <div className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                    Technical discussions
+                  </li>
                 </ul>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-white dark:bg-gray-950">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-6">
-              <FAQItem
-                question="Are these projects open source?"
-                answer="Yes! All our projects are available on GitHub with detailed documentation. We encourage contributions and feedback from the community."
-              />
-              <FAQItem
-                question="Can I use these projects for my own work?"
-                answer="Absolutely. Our projects are released under permissive open-source licenses. Please check each repository for specific licensing details."
-              />
-              <FAQItem
-                question="Do you offer consulting services?"
-                answer="We're open to consulting opportunities that align with our expertise in data science, machine learning, and decision intelligence systems. Get in touch to discuss your needs."
-              />
-              <FAQItem
-                question="How can I contribute to your projects?"
-                answer="We welcome contributions! Check out our GitHub repositories, review the contribution guidelines, and feel free to submit issues or pull requests."
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  );
-}
-
-function FAQItem({ question, answer }: { question: string; answer: string }) {
-  return (
-    <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-        {question}
-      </h3>
-      <p className="text-gray-600 dark:text-gray-400">{answer}</p>
     </div>
   );
 }

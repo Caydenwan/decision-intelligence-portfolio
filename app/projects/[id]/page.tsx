@@ -6,7 +6,6 @@ import Link from "next/link";
 import { ArrowLeft, Github, ExternalLink, Users } from "lucide-react";
 import * as Icons from "lucide-react";
 import { projects } from "@/lib/projects";
-import Image from "next/image";
 
 export default function ProjectDetailPage() {
   const params = useParams();
@@ -106,27 +105,12 @@ export default function ProjectDetailPage() {
       {/* Overview Section */}
       <section className="py-16 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6"
-            >
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Impact
-              </h3>
-              <p className="text-2xl font-bold text-green-600 dark:text-green-400">
-                {project.impactMetric}
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6"
             >
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -148,7 +132,7 @@ export default function ProjectDetailPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-6"
             >
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
@@ -169,57 +153,6 @@ export default function ProjectDetailPage() {
             <Section title="Results" content={project.results} delay={0.4} />
             <Section title="What's Next" content={project.whatsNext} delay={0.5} />
           </div>
-        </div>
-      </section>
-
-      {/* Architecture Diagram Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-              Architecture Overview
-            </h2>
-            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
-              <div className="aspect-video bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400">
-                  Architecture diagram placeholder
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Screenshots Section */}
-      <section className="py-16 bg-white dark:bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-              Screenshots
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="bg-gray-100 dark:bg-gray-800 rounded-xl aspect-video flex items-center justify-center border border-gray-200 dark:border-gray-700"
-                >
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Screenshot {i} placeholder
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 

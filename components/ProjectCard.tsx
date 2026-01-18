@@ -81,12 +81,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           ))}
         </div>
 
-        <div className="mb-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-          <p className="text-sm font-medium text-green-700 dark:text-green-400">
-            {project.impactMetric}
-          </p>
-        </div>
-
         <Link
           href={`/projects/${project.id}`}
           className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors group/link"
