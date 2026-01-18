@@ -22,7 +22,7 @@ export default function Home() {
               Decision Intelligence for Everyday Life
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Four data projects turning raw data into better choices.
+              A portfolio of data-driven analytics products by Duke Fuqua MQM students, turning raw data into better choices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -36,7 +36,7 @@ export default function Home() {
                 href="/about"
                 className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors border border-gray-300 dark:border-gray-600"
               >
-                About Us
+                About Our Team
               </Link>
             </div>
           </motion.div>
@@ -130,8 +130,8 @@ export default function Home() {
               Our Projects
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Four connected projects demonstrating the power of data science and machine learning
-              in solving real-world problems.
+              Four real-world projects demonstrating the power of data science and machine learning
+              in solving practical challenges.
             </p>
           </motion.div>
 
