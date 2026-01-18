@@ -160,62 +160,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Expertise Section */}
-      <section className="py-20 bg-white dark:bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Expertise
-            </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Together, we bring a comprehensive skill set spanning machine learning, data engineering, and software development.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <SkillCategory
-              title="Machine Learning & AI"
-              skills={[
-                "Natural Language Processing (NLP)",
-                "Computer Vision",
-                "Deep Learning (PyTorch)",
-                "Model Optimization & Deployment",
-                "Transformers & BART",
-              ]}
-              delay={0}
-            />
-            <SkillCategory
-              title="Data Engineering"
-              skills={[
-                "Web Scraping & Data Collection",
-                "ETL Pipeline Design",
-                "Time-Series Analysis",
-                "Data Cleaning & Preprocessing",
-                "BLS Data Integration",
-              ]}
-              delay={0.1}
-            />
-            <SkillCategory
-              title="Software Development"
-              skills={[
-                "Full-Stack Web Development",
-                "React & TypeScript",
-                "API Design & Integration",
-                "Data Visualization (Plotly)",
-                "Next.js & Tailwind CSS",
-              ]}
-              delay={0.2}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -245,35 +189,3 @@ export default function AboutPage() {
   );
 }
 
-function SkillCategory({
-  title,
-  skills,
-  delay,
-}: {
-  title: string;
-  skills: string[];
-  delay: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-800"
-    >
-      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{title}</h3>
-      <ul className="space-y-2">
-        {skills.map((skill) => (
-          <li
-            key={skill}
-            className="flex items-start text-gray-600 dark:text-gray-400 text-sm"
-          >
-            <span className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3"></span>
-            {skill}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
