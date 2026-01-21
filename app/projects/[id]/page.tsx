@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, Github, ExternalLink, Users } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import * as Icons from "lucide-react";
 import { projects } from "@/lib/projects";
 
@@ -153,40 +153,6 @@ export default function ProjectDetailPage() {
             <Section title="Results" content={project.results} delay={0.4} />
             <Section title="What's Next" content={project.whatsNext} delay={0.5} />
           </div>
-        </div>
-      </section>
-
-      {/* Team Contributions */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                Team Contributions
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {project.contributions.map((contribution, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700"
-                >
-                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
-                  <p className="text-gray-700 dark:text-gray-300">{contribution}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
