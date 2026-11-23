@@ -1,0 +1,8 @@
+{
+  "name": "orbit-wall-street-desk",
+  "private": true,
+  "version": "1.1.0",
+  "engines": {
+    "node": ">=20"
+  }
+}
