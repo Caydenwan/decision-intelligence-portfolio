@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F8FAFD">
+<meta name="description" content="ORBIT — a quieter, clearer market intelligence workspace with source-aware price data and AI-powered conditional research.">
+<title>ORBIT — Market Intelligence</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2313264A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23D9E6FF' stroke-width='5'/%3E%3Cpath d='M17 35l10-10 8 9 13-14' fill='none' stroke='%238CB5FF' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+<script src="/app.js" defer></script>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" aria-label="Main navigation">
+    <a class="brand" href="#top" aria-label="ORBIT home"><span class="brand-mark"><span class="brand-ring"></span></span><span class="brand-name">orbit<span class="brand-period">.</span></span></a>
+    <div class="nav-caption">WORKSPACE</div>
+    <nav class="side-nav">
+      <a class="nav-link active" href="#overview"><span class="nav-icon">◫</span><span>Overview</span></a>
+      <a class="nav-link" href="#research"><span class="nav-icon">⌁</span><span>Market Research</span></a>
+      <a class="nav-link" href="#intelligence"><span class="nav-icon">✦</span><span>AI Intelligence</span></a>
+      <a class="nav-link" href="#watchlist"><span class="nav-icon">▥</span><span>Watchlist</span></a>
+      <a class="nav-link" href="#risk"><span class="nav-icon">◇</span><span>Risk Studio</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="sidebar-disc"><span class="pulse-dot"></span><span>Independent research desk</span></div>
+      <p>Signal first.<br>Noise last.</p>
+      <small>ORBIT / VERSION 2.0</small>
+    </div>
+  </aside>
+  <main class="main" id="top">
+    <header class="topbar">
+      <div class="breadcrumb">ORBIT <span class="slash">/</span> <strong>Overview</strong></div>
+      <div class="header-right">
+        <span id="marketHours" class="market-hours"><span class="status-light"></span>Market status…</span>
+        <span class="clock" id="nyClock">NEW YORK —:—</span>
+        <button id="refreshButton" class="icon-button" title="Refresh quotes" aria-label="Refresh quotes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-3 6"></path><path d="M20 4v7h-7"></path></svg></button>
+      </div>
+    </header>
+    <div class="content">
+      <section class="hero" id="overview">
+        <div class="hero-left">
+          <div class="eyebrow"><span class="eyebrow-dot"></span>YOUR PRIVATE MARKET DESK</div>
+          <h1>Markets, <em>made clear.</em></h1>
+          <p>让数据清晰，让判断从容。实时更新的市场视图、可验证的技术信号，以及基于真实行情的 AI 研究。</p>
+        </div>
+        <div class="hero-meta">
+          <span id="displayDate">MONDAY, NOV 23</span>
+          <span class="data-pill"><span class="tiny-signal"></span><span id="dataStatus">Connecting to market data</span></span>
+          <small id="dataTimestamp">报价时间与数据延迟将在加载后显示</small>
+        </div>
+      </section>
+      <section class="section market-cards" aria-label="Market snapshot">
+        <div class="quote-card" data-quote="SPY"><div class="quote-heading"><span>SPY</span><span class="quote-symbol">S&P 500 ETF</span></div><div class="quote-main">—</div><div class="quote-bottom"><span class="quote-change">Awaiting price</span><span class="quote-clock">—</span></div></div>
+        <div class="quote-card" data-quote="QQQ"><div class="quote-heading"><span>QQQ</span><span class="quote-symbol">Nasdaq 100</span></div><div class="quote-main">—</div><div class="quote-bottom"><span class="quote-change">Awaiting price</span><span class="quote-clock">—</span></div></div>
+        <div class="quote-card" data-quote="^VIX"><div class="quote-heading"><span>VIX</span><span class="quote-symbol">Volatility Index</span></div><div class="quote-main">—</div><div class="quote-bottom"><span class="quote-change">Awaiting price</span><span class="quote-clock">—</span></div></div>
+        <div class="quote-card" data-quote="^TNX"><div class="quote-heading"><span>US 10Y</span><span class="quote-symbol">Treasury yield</span></div><div class="quote-main">—</div><div class="quote-bottom"><span class="quote-change">Awaiting price</span><span class="quote-clock">—</span></div></div>
+      </section>
+      <section class="section research-grid" id="research">
+        <article class="panel chart-panel">
+          <div class="panel-head chart-head">
+            <div><div class="section-kicker">PRICE EXPLORER</div><h2 id="chartTitle">SPY <span>S&P 500 ETF</span></h2></div>
+            <div class="chart-price"><strong id="detailPrice">—</strong><span id="detailDelta">—</span></div>
+          </div>
+          <div class="symbol-tabs" id="symbolTabs" aria-label="Choose a ticker">
+            <button class="pill active" data-symbol="SPY">SPY</button>
+            <button class="pill" data-symbol="QQQ">QQQ</button>
+            <button class="pill" data-symbol="NVDA">NVDA</button>
+            <button class="pill" data-symbol="MSFT">MSFT</button>
+            <button class="pill" data-symbol="AMZN">AMZN</button>
+            <button class="pill" data-symbol="AAPL">AAPL</button>
+          </div>
+          <div class="chart-canvas" id="chartCanvas">
+            <div class="chart-loading" id="chartLoading"><span class="loading-circle"></span>Loading verified price history…</div>
+            <svg id="priceChart" viewBox="0 0 900 324" preserveAspectRatio="none" role="img" aria-label="Historical market price chart">
+              <defs><linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5686F7" stop-opacity=".23"/><stop offset="1" stop-color="#5686F7" stop-opacity="0"/></linearGradient></defs>
+              <g id="chartGrid"></g><path id="chartArea" fill="url(#areaFill)"></path><path id="chartLine" fill="none" stroke="#4677E8" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"></path><g id="chartPointer" visibility="hidden"><line id="crosshair" y1="15" y2="282" stroke="#9AABC3" stroke-dasharray="4 5"/><circle id="pointCircle" r="5" fill="#4677E8" stroke="#fff" stroke-width="3"></circle></g>
+            </svg>
+            <div id="chartTooltip" class="chart-tooltip" hidden></div>
+          </div>
+          <div class="chart-footer">
+            <div class="range-switch" id="rangeSwitch"><button class="range active" data-range="1d">1D</button><button class="range" data-range="5d">5D</button><button class="range" data-range="1mo">1M</button><button class="range" data-range="3mo">3M</button></div>
+            <span class="chart-source" id="chartSource">Yahoo Finance · quote delay unknown</span>
+          </div>
+        </article>
+        <article class="panel regime-panel">
+          <div class="panel-head"><div><div class="section-kicker">THE BIG PICTURE</div><h2>Market pulse</h2></div><span class="signal-orb"></span></div>
+          <div class="regime-overline">CURRENT REGIME</div>
+          <div id="regimeHeadline" class="regime-headline">Awaiting signal</div>
+          <p class="regime-summary" id="regimeDescription">The market regime is calculated from verified SPY, QQQ and VIX snapshots. No simulated signals.</p>
+          <div class="divider"></div>
+          <div class="regime-row"><span>Equity direction</span><strong id="breadthSignal">—</strong></div>
+          <div class="regime-row"><span>Volatility context</span><strong id="volSignal">—</strong></div>
+          <div class="regime-row"><span>Preferred posture</span><strong id="postureSignal">WAIT</strong></div>
+          <div class="pulse-foot"><span class="pulse-dot"></span><span>Rule-based snapshot · not institutional order flow</span></div>
+        </article>
+      </section>
+      <section class="section analysis-grid">
+        <article class="panel technical-panel">
+          <div class="panel-head"><div><div class="section-kicker">TECHNICAL CONTEXT</div><h2>Under the surface.</h2></div><span class="quiet-chip" id="indSymbol">SPY · Daily</span></div>
+          <div class="technical-intro" id="techInterpretation">正在读取历史 K 线并计算均线与趋势。</div>
+          <div class="technical-metrics">
+            <div class="technical-item"><span>RSI <small>(14)</small></span><strong id="rsiValue">—</strong><div class="rsi-track"><div id="rsiFill" class="rsi-fill"></div></div></div>
+            <div class="technical-item"><span>SMA 20</span><strong id="sma20">—</strong><small>20-day average</small></div>
+            <div class="technical-item"><span>SMA 50</span><strong id="sma50">—</strong><small>50-day average</small></div>
+            <div class="technical-item"><span>Realized vol.</span><strong id="vol20">—</strong><small>20D · annualized</small></div>
+          </div>
+          <div class="technical-range"><span>20-day observed range</span><strong id="technicalRange">—</strong></div>
+          <div class="data-footnote">数据来源：Yahoo Finance 历史日线（非官方）。指标由本站计算，不能单独证明价格方向或盈利概率。</div>
+        </article>
+        <article class="panel ai-panel" id="intelligence">
+          <div class="ai-top"><span class="ai-sigil">✳</span><span class="ai-badge" id="aiStatus">AI checking…</span></div>
+          <div class="section-kicker">OPENAI-POWERED RESEARCH</div>
+          <h2>Think beyond<br><em>the ticker.</em></h2>
+          <p>把真实价格、均线、RSI 和风险偏好交给模型，生成有条件的交易剧本，而不是盲目给出 BUY 信号。</p>
+          <div class="ai-controls"><label>Horizon<select id="aiHorizon"><option value="swing">Swing · 2–10 days</option><option value="position">Position · 2–8 weeks</option></select></label><label>Risk profile<select id="aiRisk"><option value="balanced">Balanced</option><option value="conservative">Conservative</option><option value="aggressive">Aggressive</option></select></label></div>
+          <button class="ai-button" id="analyzeButton"><span>Generate strategy for <b id="aiSymbol">SPY</b></span><span>↗</span></button>
+          <div class="ai-result" id="aiResult"><span class="ai-result-eyebrow">YOUR RESEARCH SPACE</span><p>选择股票后点击 Generate。每次 AI 分析都需要验证行情，结果会显示引用的价格和时间。</p></div>
+          <div class="ai-disclaimer">AI 按需调用 · 可能产生 API 用量费用 · 不会自动下单</div>
+        </article>
+      </section>
+      <section class="section panel watch-panel" id="watchlist">
+        <div class="panel-head"><div><div class="section-kicker">CURATED UNIVERSE</div><h2>Your watchlist.</h2><p class="subhead">行情自动刷新，点击任意股票切换研究图表。</p></div><form id="watchForm" class="watch-add"><input id="watchInput" aria-label="Add ticker" placeholder="Add ticker" maxlength="16" autocomplete="off"><button type="submit" aria-label="Add ticker">+</button></form></div>
+        <div class="table-overflow"><table class="stock-table"><thead><tr><th>ASSET</th><th>LAST PRICE</th><th>DAY CHANGE</th><th>QUOTE TIME · ET</th><th>RESEARCH</th></tr></thead><tbody id="watchBody"><tr><td colspan="5" class="empty-row">Connecting to quote provider…</td></tr></tbody></table></div>
+        <div class="table-bottom"><span id="quoteCoverage">No verified quotes yet</span><span>Market data may be delayed</span></div>
+      </section>
+      <section class="section risk-grid" id="risk">
+        <article class="panel risk-panel"><div class="panel-head"><div><div class="section-kicker">CAPITAL FIRST</div><h2>Position sizing.</h2></div><span class="quiet-chip">Risk Studio</span></div>
+         <div class="risk-form"><label>Portfolio value ($)<input type="number" id="navInput" min="0" step="100" value="10000"></label><label>Risk per trade (%)<input type="number" id="riskInput" min=".1" max="10" step=".1" value=".5"></label><label>Planned entry ($)<input type="number" id="entryInput" min="0" step=".01" placeholder="e.g. 250"></label><label>Invalidation / stop ($)<input type="number" id="stopInput" min="0" step=".01" placeholder="e.g. 243"></label></div>
+         <div class="risk-result"><div><span>Planned max stop risk</span><strong id="riskBudget">$50.00</strong></div><div><span>Position estimate</span><strong id="shareCount">—</strong></div><div><span>Capital required</span><strong id="capitalRequired">—</strong></div></div>
+         <div class="data-footnote">股票多头按预设止损估算，不含跳空、滑点、手续费；实际最大损失可超过止损预算。</div>
+        </article>
+        <article class="panel approach-panel"><div class="approach-icon">◎</div><div class="section-kicker">A BETTER DEFAULT</div><h2>Clarity over<br>conviction.</h2><p>每一个交易决策，都应该能回答三个问题：</p>
+          <div class="approach-line"><span>01</span><span>什么数据支持这笔交易？</span></div>
+          <div class="approach-line"><span>02</span><span>什么价格会推翻原来的判断？</span></div>
+          <div class="approach-line"><span>03</span><span>风险是否值得承担？</span></div>
+          <div class="approach-note">Markets do not owe us a trade.</div>
+        </article>
+      </section>
+      <footer><span>© ORBIT RESEARCH DESK · 2026</span><span>Indicative market information. No broker connection. No auto execution.</span><a href="https://finance.yahoo.com/" target="_blank" rel="noopener">Yahoo Finance ↗</a></footer>
+    </div>
+  </main>
+</div>
+<div id="toast" role="status" class="toast" hidden></div>
+<nav class="mobile-nav" aria-label="Mobile navigation"><a href="#overview">Overview</a><a href="#research">Charts</a><a href="#intelligence">AI Research</a><a href="#watchlist">Watchlist</a></nav>
+</body>
+</html>
