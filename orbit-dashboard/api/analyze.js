@@ -18,7 +18,7 @@ module.exports=async function handler(req,res){
  const horizon=['swing','position'].includes(req.body?.horizon)?req.body.horizon:'swing';
  const risk=['conservative','balanced','aggressive'].includes(req.body?.risk)?req.body.risk:'balanced';
  if(!validSymbol(sym))return res.status(400).json({error:'Invalid ticker'});
- const key=process.env.OPENAI_API_KEY||process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN;
+ const key=process.env.OPENAI_API_KEY||process.env.AI_GATEWAY_API_KEY||req.headers['x-vercel-oidc-token']||process.env.VERCEL_OIDC_TOKEN;
  if(!key)return res.status(503).json({error:'AI_NOT_CONFIGURED',message:'AI model credentials are not available. Market data and technical signals remain active.'});
  const id=sym+'|'+horizon+'|'+risk;
  const old=requestCache.get(id);
